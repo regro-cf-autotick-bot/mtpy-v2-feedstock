@@ -38,8 +38,8 @@ requirements:
 test:
   imports:
     - mtpy
-    - mtpy.core.mt.MT
-    - mtpy.core.mt_collection.MTCollection
+    - mtpy.core.mt
+    - mtpy.core.mt_collection
   commands:
     - pip check
   requires:
