@@ -1,5 +1,6 @@
 {% set name = "mtpy-v2" %}
-{% set version = "2.0.3" %}
+{% set version = "2.0.4" %}
+
 
 package:
   name: {{ name|lower }}
@@ -7,36 +8,37 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mtpy-v2-{{ version }}.tar.gz
-  sha256: 53e742b711f2973df8d6da033249ca69e65fcd2b2435f5c5f3ab4affca2ae528
+  sha256: 02f1b162a0b028e14526e6cd78fe64b5109124ea3a80c469205ec13517ba82e8
 
 build:
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
 
 requirements:
   host:
-    - python >=3.8
-    - pytest-runner
     - pip
+    - pytest-runner
+    - python >=3.8
   run:
-    - python >=3.6
-    - numpy
-    - scipy
-    - matplotlib-base <=3.5.3
-    - pyproj
     - configparser
+    - contextily
+    - geopandas
+    - matplotlib-base
     - mt-metadata
     - mth5
-    - pandas
-    - geopandas
-    - contextily
+    - numpy
     - pyevtk
-    - loguru
+    - pyproj
+    - python >=3.8
+    - rasterio
+    - scipy
+    - simpeg ==0.20.0
 
 test:
   imports:
     - mtpy
+    - mtpy.analysis
   commands:
     - pip check
   requires:
