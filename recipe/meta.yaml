@@ -1,5 +1,5 @@
 {% set name = "mtpy-v2" %}
-{% set version = "2.0.6" %}
+{% set version = "2.0.9" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mtpy-v2-{{ version }}.tar.gz
-  sha256: 92d0209ba1bec832d81d1742efd79705f908f8f8c86803cb335e0bd9e175d313
+  sha256: 1957b92f7ed7d34a5cac358cd6d66a834484c79f6050833b9634836b07743ddf
 
 build:
   number: 0
@@ -33,7 +33,8 @@ requirements:
     - python >=3.8
     - rasterio
     - scipy
-    - simpeg ==0.20.0
+    - simpeg >=0.22.0
+    - aurora >=0.3.13
 
 test:
   imports:
