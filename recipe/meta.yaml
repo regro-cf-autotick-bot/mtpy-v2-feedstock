@@ -33,7 +33,7 @@ requirements:
     - python >=3.8
     - rasterio
     - scipy
-    - simpeg ==0.20.0
+    - simpeg >=0.22.0
 
 test:
   imports:
