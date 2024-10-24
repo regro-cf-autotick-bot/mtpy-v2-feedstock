@@ -1,5 +1,5 @@
 {% set name = "mtpy-v2" %}
-{% set version = "2.0.11" %}
+{% set version = "2.0.12" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mtpy-v2-{{ version }}.tar.gz
-  sha256: 8465904c7473f94ca80513a87d8585ce9f8daf0825103de01c75edd2d739fa1d
+  sha256: 28650f05389dd8b4b0a0b2a6a25fc97454a3e81ae715b51b88cba04c9466e22c
 
 build:
   number: 0
