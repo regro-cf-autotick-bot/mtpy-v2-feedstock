@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mtpy-v2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mtpy-v2-{{ version }}.tar.gz
   sha256: 28650f05389dd8b4b0a0b2a6a25fc97454a3e81ae715b51b88cba04c9466e22c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - pytest-runner
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - configparser
     - contextily
@@ -30,7 +30,7 @@ requirements:
     - numpy
     - pyevtk
     - pyproj
-    - python >=3.8
+    - python >={{ python_min }}
     - rasterio
     - scipy
     - simpeg >=0.22.0
@@ -45,6 +45,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/MTgeophysics/mtpy-v2
